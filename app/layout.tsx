@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/components/Provider/ReduxProvider";
+import QueryProvider from "@/components/Provider/TanstackProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#121212]`}>
-        <ReduxProvider>
-        {children}
-        </ReduxProvider>
+        <QueryProvider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </QueryProvider>
       </body>
     </html>
   );
