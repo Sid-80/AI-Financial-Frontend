@@ -18,11 +18,11 @@ export const createNewUser = async (User: USER) => {
   }
 };
 
-export const loginUser = async (username: string, password: string) => {
+export const loginUser = async (email: string, password: string) => {
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/user/login`,
-      { username, password },
+      { email, password },
       {
         headers: {
           "Content-Type": "application/json",
