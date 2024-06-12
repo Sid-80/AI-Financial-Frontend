@@ -1,10 +1,12 @@
 export interface USER{
-    username:string;
+    firstname:string;
+    lastname:string;
+    phone:string;
     email:string;
     password:string;
-}
+  }
 
 export type LoginUser = {
-    username:string;
+    email:string;
     password:string;
 }

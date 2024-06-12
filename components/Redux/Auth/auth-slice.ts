@@ -3,7 +3,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type AuthState = {
   isAuth: boolean;
   id:string;
-  username: string;
+  firstname: string;
+  lastname: string;
   email: string;
   refreshToken:string;
   accessToken:string;
@@ -12,7 +13,8 @@ type AuthState = {
 const initialState: AuthState = {
   id:"",
     isAuth: false,
-    username: "",
+    firstname: "",
+    lastname:"",
     email: "",
     accessToken: "",
     refreshToken: ""
@@ -31,7 +33,6 @@ export const auth = createSlice({
       state.isAuth = true;
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
-      state.username = action.payload.username;
     },
   },
 });
