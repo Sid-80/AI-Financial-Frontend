@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { createUserSchema } from "../formValidation";
+import { createUserSchema } from "../../components/Validations/formValidation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/components/Redux/store";
 import { useSignIn } from "@/lib/React-query/Mutation";
