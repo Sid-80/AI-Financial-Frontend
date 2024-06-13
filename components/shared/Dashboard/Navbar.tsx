@@ -4,11 +4,12 @@ import { RootState } from "@/components/Redux/store";
 import { Button } from "@/components/ui/button";
 import { useLogout } from "@/lib/React-query/Mutation";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-
 
 export default function Navbar() {
   const dispatch = useDispatch();
+  const pathname = usePathname();
   const { mutateAsync: useLogoutMutation } = useLogout();
   const _id = useSelector((state: RootState) => state.auth.id);
 
@@ -16,9 +17,9 @@ export default function Navbar() {
     useLogoutMutation(_id);
     dispatch(logOut());
   };
-  
+
   return (
-    <div className="flex p-2 px-4 items-center justify-between">
+    <div className="flex p-2 sm:p-3 lg:p-4 px-4 items-center justify-between">
       <div className="flex gap-1 items-center justify-center">
         <Image
           className="w-6 h-6 sm:hidden"
@@ -27,8 +28,11 @@ export default function Navbar() {
           height={10}
           alt=""
         />
-        <h1 className="text-white text-[10px] font-semibold sm:text-[20px]">
-          Dashboard
+        <h1 className="text-white text-[14px] font-semibold sm:text-[20px]">
+          {pathname === "/dashboard" && "Dashboard"}
+          {pathname === "/dashboard/planning" && "Retirement Planning"}
+          {pathname === "/dashboard/goal-planning" && "Goal-based Planning"}
+          {pathname === "/dashboard/assistant" && "Personal Assistant"}
         </h1>
       </div>
       <div className="flex gap-2">
