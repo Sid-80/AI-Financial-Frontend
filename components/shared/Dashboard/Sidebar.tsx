@@ -7,7 +7,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-[#1A1A1A] p-6 flex flex-col items-center justify-start gap-10">
+    <div className="bg-[#1A1A1A] hidden p-6 sm:flex flex-col items-center justify-start gap-10">
       <Logo />
       <div className="flex flex-col gap-2">
         <Button
