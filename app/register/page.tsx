@@ -41,6 +41,7 @@ export default function Page() {
       [e.target.id]: e.target.value,
     });
   };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
