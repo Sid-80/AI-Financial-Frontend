@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { SendIcon } from "lucide-react";
+import { Generate } from "@/components/Redux/Auth/auth-slice";
+import { useDispatch} from "react-redux";
 
 export default function MessageInputForm() {
   const form = useForm<z.infer<typeof assistantSchema>>({
@@ -22,11 +24,10 @@ export default function MessageInputForm() {
       prompt: "",
     },
   });
-
+  const dispatch = useDispatch();
   function onSubmit(values: z.infer<typeof assistantSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    dispatch(Generate({ input: values.prompt }));
+    console.log(values.prompt);
   }
 
   return (
