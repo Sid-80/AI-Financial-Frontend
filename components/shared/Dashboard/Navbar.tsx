@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex p-2 sm:p-3 lg:p-4 px-4 items-center justify-between">
+    <div className={`${pathname === "/dashboard/planning/create" ? "hidden" :  ""} flex p-2 sm:p-3 lg:p-4 px-4 items-center justify-between`}>
       <div className="flex gap-1 items-center justify-center">
         <Image
           className="w-6 h-6 sm:hidden"
@@ -30,7 +30,9 @@ export default function Navbar() {
         />
         <h1 className="text-white text-[14px] font-semibold sm:text-[20px]">
           {pathname === "/dashboard" && "Dashboard"}
-          {(pathname === "/dashboard/planning" || pathname === "/dashboard/planning/create") && "Retirement Planning"}
+          {(pathname === "/dashboard/planning" ||
+            pathname === "/dashboard/planning/create") &&
+            "Retirement Planning"}
           {pathname === "/dashboard/goal-planning" && "Goal-based Planning"}
           {pathname === "/dashboard/assistant" && "Personal Assistant"}
         </h1>
