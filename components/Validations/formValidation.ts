@@ -65,3 +65,32 @@ export const createRetirementSchema = z
     message: "Retirement age must be greater than current age",
     path: ["retirementAge"],
   });
+export const createGoalBasedSchema = z
+  .object({
+    goalName: z
+      .string()
+      .min(1,"Goal name is required"),
+    goalAmount: z
+      .number()
+      .min(0, "Goal amount must be non-negative"),
+    timeHorizon: z
+      .number()
+      .int()
+      .min(1, "Time horizon must be at least 1 year"),
+    currentSaving: z
+      .number()
+      .min(0, "Current saving must be non-negative"),
+    monthlyContribution: z
+      .number()
+      .min(0, "Monthly contribution must be non-negative"),
+    expectedRateOfReturn: z
+      .number()
+      .min(0, "Expected rate of return must be non-negative"),
+    inflationRate: z
+      .number()
+      .min(0, "Inflation rate must be non-negative"),
+    fileName: z
+      .string()
+      .min(1,"File name is required")
+      .regex(/\.[0-9a-z]+$/i, "Invalid file extension"),
+  });
