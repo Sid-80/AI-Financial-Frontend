@@ -19,7 +19,7 @@ export default function CreateAlert() {
         <AlertDialogTrigger>
             <Button className="flex gap-2">
                 <PencilIcon className="w-5 h-5" />
-                Create Plan
+                <p className="hidden sm:inline">Create Plan</p>
             </Button>
         </AlertDialogTrigger>
         <AlertDialogContent className="text-white">

@@ -44,7 +44,7 @@ export default function Sidebar() {
             <Button
               onClick={() => router.push("/dashboard/planning")}
               className={`${
-                pathname === "/dashboard/planning" ? "" : "bg-transparent"
+                pathname.includes("/dashboard/planning") ? "" : "bg-transparent"
               } flex gap-2 items-center justify-start`}
             >
               <Image
@@ -111,7 +111,7 @@ export default function Sidebar() {
           <Button
             onClick={() => router.push("/dashboard/planning")}
             className={`${
-              pathname === "/dashboard/planning" ? "" : "bg-transparent"
+              pathname.includes("/dashboard/planning") ? "" : "bg-transparent"
             } flex gap-2 items-center justify-start`}
           >
             <Image
