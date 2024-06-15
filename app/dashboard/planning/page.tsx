@@ -1,4 +1,5 @@
 import { columns } from "@/components/shared/Planning/Columns";
+import CreateAlert from "@/components/shared/Planning/CreateAlert";
 import { DataTable } from "@/components/shared/Planning/DataTable";
 import SearchBar from "@/components/shared/Planning/SearchBar";
 import { RetirementPlanningFile } from "@/types";
@@ -20,7 +21,10 @@ export default function Page() {
   ];
   return (
     <div className="flex-1 flex flex-col">
+      <div className="flex w-full items-center justify-between p-4">
+      <CreateAlert />
       <SearchBar />
+      </div>
       <div className="flex-1 p-5 text-white">
         <DataTable columns={columns} data={data} />
       </div>

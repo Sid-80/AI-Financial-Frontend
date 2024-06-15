@@ -1,5 +1,5 @@
 "use client"
-import runChat from "@/app/config/gemini";
+import runChat from "@/config/gemini";
 import { RootState } from "@/components/Redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";

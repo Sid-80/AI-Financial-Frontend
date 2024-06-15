@@ -30,7 +30,7 @@ export default function Navbar() {
         />
         <h1 className="text-white text-[14px] font-semibold sm:text-[20px]">
           {pathname === "/dashboard" && "Dashboard"}
-          {pathname === "/dashboard/planning" && "Retirement Planning"}
+          {(pathname === "/dashboard/planning" || pathname === "/dashboard/planning/create") && "Retirement Planning"}
           {pathname === "/dashboard/goal-planning" && "Goal-based Planning"}
           {pathname === "/dashboard/assistant" && "Personal Assistant"}
         </h1>
